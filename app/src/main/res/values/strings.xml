@@ -5,4 +5,6 @@
     <string name="create_profile">Create Profile</string>
     <string name="for_students">(For Students)</string>
     <string name="search_tutors">Search Tutors</string>
+    <string name="class_course">For Class/Course</string>
+    <string name="search">Search</string>
 </resources>
