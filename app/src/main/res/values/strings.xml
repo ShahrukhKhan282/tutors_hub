@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tutors Hub</string>
+    <string name="tutors_hub_aligarh">Tutors Hub</string>
+    <string name="for_tutors">(For Tutors)</string>
+    <string name="create_profile">Create Profile</string>
+    <string name="for_students">(For Students)</string>
+    <string name="search_tutors">Search Tutors</string>
+</resources>
