@@ -34,27 +34,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(isNetworkConnected()){
-                    //Intent intent= new Intent(MainActivity.this, SearchActivity.class);
-                    //startActivity(intent);
-
                     dialogBuilder = new AlertDialog.Builder(MainActivity.this).create();
                     View dialogView = inflater.inflate(R.layout.dialogbox, null);
-
                     EditText editText1 =dialogView.findViewById(R.id.search_class);
                     EditText editText2 =dialogView.findViewById(R.id.seacrh_city);
-                    //EditText editText3 =dialogView.findViewById(R.id.dialog_title);
                     Button searchButton =dialogView.findViewById(R.id.search_button);
                     searchButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            Toast.makeText(MainActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+                            Intent intent= new Intent(MainActivity.this, SearchActivity.class);
+                            intent.putExtra("class",editText1.getText().toString());
+                            intent.putExtra("city",editText2.getText().toString());
+                            startActivity(intent);
                             dialogBuilder.dismiss();
                         }
                     });
                     dialogBuilder.setView(dialogView);
                     dialogBuilder.show();
-
-
                 }
                 else{
                     Toast.makeText(MainActivity.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
