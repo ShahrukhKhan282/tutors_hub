@@ -1,10 +1,12 @@
 package com.example.tutorshubaligarh;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +35,19 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
         holder.name.setText(model.getName());
         holder.qualification.setText(model.getQualification());
         holder.city.setText(model.getCity());
+        Intent intent=new Intent(context,TutorProfile.class);
+        intent.putExtra("name",model.getName());
+        intent.putExtra("qualification",model.getQualification());
+        intent.putExtra("city",model.getCity());
+        intent.putExtra("phone",model.getPhone());
+        intent.putExtra("experience",(model.getExperience())+" Years");
+        intent.putExtra("classes",model.getClasses());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
